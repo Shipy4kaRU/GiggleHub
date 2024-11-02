@@ -1,5 +1,11 @@
 // ROUTER
-import { useParams, Route, Link, Switch } from "react-router-dom";
+import {
+  useParams,
+  Route,
+  Link,
+  Switch,
+  useRouteMatch,
+} from "react-router-dom";
 // REACT
 import { Fragment } from "react";
 //CMPONENTS
@@ -10,6 +16,9 @@ import HighlightedJoke from "../components/jokes/HighlightedJoke";
 import { DUMMY_JOKES } from "./Jokes";
 
 const JokeDetails = function () {
+  const routeMatch = useRouteMatch();
+
+  console.log(routeMatch);
   const params = useParams();
   const joke = DUMMY_JOKES.find((joke) => joke.id === params.jokeId);
 
@@ -18,7 +27,7 @@ const JokeDetails = function () {
     <Fragment>
       <HighlightedJoke text={joke.text} topic={joke.topic} />
       <Switch>
-        <Route path="/jokes/:jokeId" exact>
+        <Route path={routeMatch.path} exact>
           <Link
             className="centered btn--empty"
             to={`/jokes/${params.jokeId}/comments`}
@@ -26,7 +35,7 @@ const JokeDetails = function () {
             Show Comments
           </Link>
         </Route>
-        <Route path="/jokes/:jokeId/comments">
+        <Route path={`${routeMatch.path}/comments`}>
           <Comments></Comments>
         </Route>
       </Switch>

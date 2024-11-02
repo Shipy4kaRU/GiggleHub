@@ -7,7 +7,7 @@ const AddJoke = function () {
   const history = useHistory();
   const addJokeHandler = (jokeData) => {
     console.log(jokeData);
-    history.push("/jokes");
+    history.push(`/jokes`);
   };
 
   return <JokeForm onAddJoke={addJokeHandler} />;

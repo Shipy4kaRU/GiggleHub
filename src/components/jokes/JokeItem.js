@@ -1,8 +1,10 @@
 // ROUTER
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "./JokeItem.module.css";
 
 const JokeItem = (props) => {
+  const routeMatch = useRouteMatch();
+
   return (
     <li className={styles.item}>
       <figure>
@@ -11,7 +13,7 @@ const JokeItem = (props) => {
         </blockquote>
         <figcaption>{props.topic}</figcaption>
       </figure>
-      <Link className="btn" to={`/jokes/${props.id}/`}>
+      <Link className="btn" to={`${routeMatch.path}/${props.id}/`}>
         Expand
       </Link>
     </li>

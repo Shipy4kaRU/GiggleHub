@@ -1,5 +1,5 @@
 // REACT
-import { useRef, useState, Fragment } from "react";
+import { useRef, useState, Fragment, useEffect } from "react";
 // ROUTER
 import { Prompt } from "react-router-dom";
 //COMPONENTS
@@ -16,9 +16,22 @@ const JokeForm = (props) => {
     event.preventDefault();
     const enteredTopic = topicInputRef.current.value;
     const enteredText = textInputRef.current.value;
-
-    props.onAddJoke({ topic: enteredTopic, text: enteredText });
+    if (enteredTopic.trim() !== "" && enteredText.trim() !== "")
+      props.onAddJoke({ topic: enteredTopic, text: enteredText });
   }
+
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = ""; // Для современных браузеров
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   const formFocusHandler = () => {
     setIsFormFocused(true);

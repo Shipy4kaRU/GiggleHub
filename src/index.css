@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rakkas&family=Roboto&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Rakkas', cursive;
+  font-family: "Rakkas", cursive;
   margin: 0;
   background-color: #f7f7f7;
 }
@@ -34,6 +34,12 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 1028px) {
+  .btn {
+    font-size: 0.8rem;
+  }
+}
+
 .btn:hover,
 .btn:active {
   color: black;
@@ -50,6 +56,12 @@ body {
   padding: 0.5rem 1.5rem;
   border: 1px solid #f48405;
   border-radius: 5px;
+}
+
+@media (max-width: 1028px) {
+  .btn--empty {
+    font-size: 0.8rem;
+  }
 }
 
 .btn--empty:hover,

@@ -1,5 +1,5 @@
 .item {
-  margin: 1rem 0;
+  margin: 1rem;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -24,6 +24,12 @@
   text-align: left;
   font-size: 1.7rem;
   color: #39332c;
+}
+
+@media (max-width: 1028px) {
+  .item blockquote {
+    font-size: 1rem;
+  }
 }
 
 .item p {

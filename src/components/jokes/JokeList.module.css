@@ -22,6 +22,12 @@
   cursor: pointer;
 }
 
+@media (max-width: 1028px) {
+  .sort button {
+    font-size: 0.8rem;
+  }
+}
+
 .sort button:hover {
   background-color: #f6d0a4;
 }

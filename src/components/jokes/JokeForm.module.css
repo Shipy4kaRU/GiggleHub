@@ -31,7 +31,14 @@
   border: 1px solid #dfc8bc;
   display: block;
   width: 100%;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1268px) {
+  .control input,
+  .control textarea {
+    font-size: 0.8rem;
+  }
 }
 
 .control input:focus,
@@ -42,8 +49,4 @@
 
 .actions {
   text-align: right;
-}
-
-.actions button {
-  font-size: 1.3rem;
 }

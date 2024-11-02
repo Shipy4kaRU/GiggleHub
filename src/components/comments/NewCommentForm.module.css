@@ -1,5 +1,5 @@
 .form {
-  margin-top: 1rem;
+  margin: 1rem 3rem 0;
   position: relative;
   text-align: center;
 }
@@ -35,11 +35,13 @@
   font-size: 1.3rem;
 }
 
+@media (max-width: 1268px) {
+  .control textarea {
+    font-size: 1rem;
+  }
+}
+
 .control textarea:focus {
   background-color: #decebd;
   outline-color: #f48405;
-}
-
-.actions button {
-  font-size: 1.3rem;
 }

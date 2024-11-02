@@ -7,25 +7,51 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 // REACT
-import { Fragment } from "react";
-//CMPONENTS
+import { Fragment, useEffect } from "react";
+//COMPONENTS
 import Comments from "../components/comments/Comments";
 import HighlightedJoke from "../components/jokes/HighlightedJoke";
-
-// DATA (temporary)
-import { DUMMY_JOKES } from "./Jokes";
+import useHttp from "../hooks/use-http";
+import { getJoke } from "../utlis/firebase-api";
+import Loader from "../components/UI/Loader";
 
 const JokeDetails = function () {
   const routeMatch = useRouteMatch();
 
+  const {
+    sendHttpRequest,
+    status,
+    data: loadedJoke,
+    error,
+  } = useHttp(getJoke, true);
+
   console.log(routeMatch);
   const params = useParams();
-  const joke = DUMMY_JOKES.find((joke) => joke.id === params.jokeId);
+  const { jokeId } = params;
 
-  if (!joke) return <h1 className="centered">Шуток не найдено!</h1>;
+  useEffect(() => {
+    sendHttpRequest(jokeId);
+  }, [sendHttpRequest, jokeId]);
+
+  if (status === "pending")
+    return (
+      <div className="centered">
+        <Loader></Loader>
+      </div>
+    );
+
+  if (error) {
+    return <p className="centered">{error}</p>;
+  }
+
+  if (!loadedJoke.text) {
+    return <h1>Joke's not found!</h1>;
+  }
+
+  if (!loadedJoke) return <h1 className="centered">Шуток не найдено!</h1>;
   return (
     <Fragment>
-      <HighlightedJoke text={joke.text} topic={joke.topic} />
+      <HighlightedJoke text={loadedJoke.text} topic={loadedJoke.topic} />
       <Switch>
         <Route path={routeMatch.path} exact>
           <Link

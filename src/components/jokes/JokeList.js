@@ -34,11 +34,11 @@ const JokeList = (props) => {
     <Fragment>
       <div className={styles.sort}>
         <button onClick={toggleSortingHandler}>
-          Sort Jokes {isSortingAscending ? "Ascending" : "Descending"}
+          Sorted by Date: {isSortingAscending ? "Oldest First" : "Newest First"}
         </button>
       </div>
       <ul className={styles.list}>
-        {props.jokes.map((joke) => (
+        {sortedJokes.map((joke) => (
           <JokeItem
             key={joke.id}
             id={joke.id}

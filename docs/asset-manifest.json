@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GiggleHub/static/css/main.45b11e8a.css",
+    "main.js": "/GiggleHub/static/js/main.f7062d4e.js",
+    "index.html": "/GiggleHub/index.html",
+    "main.45b11e8a.css.map": "/GiggleHub/static/css/main.45b11e8a.css.map",
+    "main.f7062d4e.js.map": "/GiggleHub/static/js/main.f7062d4e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45b11e8a.css",
+    "static/js/main.f7062d4e.js"
+  ]
+}

@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Jokes-List/static/css/main.45b11e8a.css",
-    "main.js": "/Jokes-List/static/js/main.95472745.js",
-    "index.html": "/Jokes-List/index.html",
-    "main.45b11e8a.css.map": "/Jokes-List/static/css/main.45b11e8a.css.map",
-    "main.95472745.js.map": "/Jokes-List/static/js/main.95472745.js.map"
+    "main.css": "/GiggleHub/static/css/main.45b11e8a.css",
+    "main.js": "/GiggleHub/static/js/main.f7062d4e.js",
+    "index.html": "/GiggleHub/index.html",
+    "main.45b11e8a.css.map": "/GiggleHub/static/css/main.45b11e8a.css.map",
+    "main.f7062d4e.js.map": "/GiggleHub/static/js/main.f7062d4e.js.map"
   },
   "entrypoints": [
     "static/css/main.45b11e8a.css",
-    "static/js/main.95472745.js"
+    "static/js/main.f7062d4e.js"
   ]
 }
